@@ -1,0 +1,140 @@
+/* ==== PASIYA-MD TEAM LUXURY STYLE ==== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --bg-dark: #0a0a0a;
+  --gold: #d4af37;
+  --white: #ffffff;
+  --gray: #999;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border-gold: 1px solid rgba(212, 175, 55, 0.5);
+  --shadow-glow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #000000, #111111, #000000);
+  color: var(--white);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 60px 20px 30px;
+  background: linear-gradient(to bottom, #111, transparent);
+  animation: fadeDown 1s ease forwards;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  color: var(--gold);
+  text-shadow: 0 0 10px var(--gold);
+  letter-spacing: 3px;
+}
+
+header p {
+  color: var(--gray);
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+/* TEAM SECTION */
+.team-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 60px 40px;
+}
+
+.team-card {
+  background: var(--card-bg);
+  border: var(--border-gold);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(212,175,55,0.15), transparent 70%);
+  transform: rotate(45deg);
+  transition: 0.7s;
+}
+
+.team-card:hover::before {
+  top: 0;
+  left: 0;
+}
+
+.team-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--gold);
+}
+
+.team-card h2 {
+  color: var(--gold);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.team-card h3 {
+  color: var(--white);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.team-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px 10px;
+  border-top: var(--border-gold);
+  color: var(--gray);
+  background: linear-gradient(to top, #111, transparent);
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 10px var(--gold); }
+  50% { text-shadow: 0 0 25px var(--gold); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+  }
