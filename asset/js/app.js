@@ -1,4 +1,4 @@
-const GEMINI_KEY = "YOUR_GEMINI_API_KEY";
+const GEMINI_KEY = "AQ.Ab8RN6JT14b4cqUw7POMJ_BX-fRiWpTvAZ9AJ-x0LW3UhMxAZg";
 
 async function askGemini(question) {
   const response = await fetch(
