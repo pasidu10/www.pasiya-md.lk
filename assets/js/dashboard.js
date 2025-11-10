@@ -49,7 +49,7 @@ async function askAI() {
   }
   responseBox.innerHTML = "<i>Thinking...</i>";
 
-  const apiKey = "{YOUR_API_KEY_HERE}"; // Paste your Gemini/ChatGPT key here
+  const apiKey = "AIzaSyDwSwyxmlsieKfXMMOPFsur1VSbCIz233M"; // Paste your Gemini/ChatGPT key here
   const apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" + apiKey;
 
   const requestBody = {
