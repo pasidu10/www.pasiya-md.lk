@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syllabus | AI GAMINI KEY</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <h1 id="syllabusTitle">📖 Syllabus</h1>
+  </header>
+
+  <section class="syllabus-content" id="syllabusContent">
+    <p>Loading syllabus...</p>
+  </section>
+
+  <footer class="footer">
+    <a href="ai-chat.html" class="ai-button">Ask AI About This Subject 🤖</a>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const subject = params.get('subject');
+    const grade = params.get('grade');
+    document.getElementById("syllabusTitle").innerText = `📖 ${subject} - Grade ${grade}`;
+    document.getElementById("syllabusContent").innerHTML = `
+      <p>This is a demo syllabus section for <b>${subject}</b> (Grade ${grade}).</p>
+      <ul>
+        <li>Lesson 1: Introduction to ${subject}</li>
+        <li>Lesson 2: Key Concepts</li>
+        <li>Lesson 3: Exercises and Activities</li>
+        <li>Lesson 4: Summary & Revision</li>
+      </ul>
+    `;
+  </script>
+</body>
+</html>
