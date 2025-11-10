@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+  display:flex;flex-direction:column;min-height:100vh;
+}
+.header{
+  text-align:center;
+  padding:25px;
+  background:rgba(255,255,255,0.05);
+  border-bottom:1px solid #00e1ff;
+}
+.header h1{color:#00e1ff;text-shadow:0 0 10px #00e1ff;}
+.chat-container{
+  flex:1;display:flex;flex-direction:column;
+  justify-content:space-between;max-width:800px;margin:0 auto;padding:20px;
+}
+.chat-output{
+  flex:1;overflow-y:auto;
+  background:rgba(255,255,255,0.05);
+  border-radius:12px;padding:15px;margin-bottom:10px;
+}
+.chat-output div{margin:10px 0;padding:10px;border-radius:8px;}
+.user{background:#005f99;text-align:right;}
+.ai{background:#003344;text-align:left;}
+.chat-input{display:flex;}
+.chat-input input{
+  flex:1;padding:12px;border-radius:8px;border:none;
+  outline:none;font-size:1em;
+}
+.chat-input button{
+  background:#00e1ff;border:none;color:#000;font-weight:bold;
+  padding:12px 20px;border-radius:8px;cursor:pointer;
+  transition:0.3s;
+}
+.chat-input button:hover{background:#00bcd4;color:#fff;}
+.footer{text-align:center;padding:15px;font-size:0.85em;background:rgba(255,255,255,0.05);}
