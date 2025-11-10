@@ -1,36 +1,24 @@
-const GEMINI_KEY = "AIzaSyB4RF6GyzBWa33SxgNRz213C8kcDLKghQs";
+async function askAI() {
+  const input = document.getElementById("userInput").value;
+  const responseBox = document.getElementById("response");
+  responseBox.innerHTML = "<i>Thinking...</i>";
 
-async function askGemini(question) {
-  const response = await fetch(
-    "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=" + GEMINI_KEY,
-    {
+  const apiKey = "{AIzaSyB4RF6GyzBWa33SxgNRz213C8kcDLKghQs}"; // <-- Paste your Gemini/ChatGPT API key here
+  const apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" + apiKey;
+
+  const requestBody = { contents: [{ parts: [{ text: input }] }] };
+
+  try {
+    const res = await fetch(apiUrl, {
       method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: question }]}]
-      })
-    }
-  );
-  const data = await response.json();
-  return data.candidates?.[0]?.content?.parts?.[0]?.text || "No answer found.";
-}
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(requestBody)
+    });
 
-async function sendQuestion() {
-  const input = document.getElementById('userInput');
-  const question = input.value.trim();
-  if(!question) return;
-  appendMsg("user", question);
-  input.value = "";
-  appendMsg("ai", "Thinking...");
-  const answer = await askGemini(question);
-  document.querySelector(".ai:last-child").innerText = answer;
-}
-
-function appendMsg(role, msg) {
-  const box = document.getElementById("chatOutput");
-  const div = document.createElement("div");
-  div.className = role;
-  div.textContent = (role==="user"?"🧑‍🎓 ":"🤖 ")+msg;
-  box.appendChild(div);
-  box.scrollTop = box.scrollHeight;
+    const data = await res.json();
+    const aiResponse = data?.candidates?.[0]?.content?.parts?.[0]?.text || "No response.";
+    responseBox.innerHTML = `<b>AI:</b> ${aiResponse}`;
+  } catch (err) {
+    responseBox.innerHTML = "<b>Error:</b> " + err.message;
+  }
 }
