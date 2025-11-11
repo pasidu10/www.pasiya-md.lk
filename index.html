@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PASIYA-MD AI SCHOOL</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="assets/logo.png" alt="AI School Logo">
+    <h1>PASIYA-MD AI SCHOOL</h1>
+  </div>
+  <p class="tagline">Learn Smart. Learn with AI.</p>
+</header>
+
+<section class="grade-section">
+  <h2>Select Your Grade</h2>
+  <div class="grade-grid">
+    <!-- Grades 1–13 -->
+    <script>
+      for (let i=1; i<=13; i++) {
+        document.write(`<a href="subjects.html?grade=${i}" class="grade-box">Grade ${i}</a>`);
+      }
+    </script>
+  </div>
+</section>
+
+<footer>
+  <p>POWERED BY PASIYA-MD TEAM | Developer: +94 76 635 9869</p>
+</footer>
+
+</body>
+</html>
